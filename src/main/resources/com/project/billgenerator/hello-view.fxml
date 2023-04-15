@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.billgenerator.HelloController">
+   <children>
+      <ImageView fitHeight="96.0" fitWidth="143.0" layoutX="458.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="30.0" layoutY="104.0" prefHeight="18.0" prefWidth="127.0" text="Enter Product ID:" />
+      <Label layoutX="30.0" layoutY="159.0" prefHeight="18.0" prefWidth="143.0" text="Enter product Quantity :" />
+      <Label layoutX="30.0" layoutY="222.0" text="Gift card or coupon ID:" />
+      <Button id="add" layoutX="366.0" layoutY="264.0" mnemonicParsing="false" onAction="#addItems" text="Add" />
+      <Button id="saveNprint" layoutX="265.0" layoutY="264.0" mnemonicParsing="false" text="Save &amp; print" />
+      <Button id="addConsumerDetails" layoutX="24.0" layoutY="264.0" mnemonicParsing="false" text="Add consumer Details" />
+      <Button id="consition" layoutX="173.0" layoutY="264.0" mnemonicParsing="false" text="Consition" />
+      <VBox alignment="CENTER" layoutX="483.0" layoutY="77.0" prefHeight="200.0" prefWidth="117.0">
+         <children>
+            <Button mnemonicParsing="false" text="VIEW" />
+            <Button mnemonicParsing="false" text="NEW" />
+            <Button mnemonicParsing="false" text="RESET" />
+            <Button mnemonicParsing="false" text="PRINT" />
+            <Button mnemonicParsing="false" text="DOUBLE PRINT" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutY="-1.0" prefHeight="74.0" prefWidth="600.0">
+         <children>
+            <Label id="bussinessName" text="Bussiness Name" />
+            <ImageView fitHeight="53.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <Separator id="horizontalDiv" layoutX="2.0" layoutY="71.0" prefHeight="11.0" prefWidth="600.0" />
+      <Separator layoutX="480.0" layoutY="77.0" orientation="VERTICAL" prefHeight="412.0" prefWidth="7.0" />
+      <Separator layoutX="-1.0" layoutY="312.0" prefHeight="3.0" prefWidth="486.0" />
+      <TextField id="productID" fx:id="productID" layoutX="242.0" layoutY="100.0" />
+      <TextField id="productQuantity" fx:id="productQuantity" layoutX="242.0" layoutY="155.0" />
+      <TextField id="couponID" layoutX="242.0" layoutY="218.0" />
+      <BorderPane layoutX="33.0" layoutY="323.0" prefHeight="151.0" prefWidth="379.0">
+         <right>
+            <Slider orientation="VERTICAL" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="ITEM" />
+                <TableColumn prefWidth="75.0" text="QTY" />
+                  <TableColumn prefWidth="75.0" text="PRICE" />
+                  <TableColumn prefWidth="75.0" text="AMOUNT" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
