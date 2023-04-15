@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.billgenerator.HelloController">
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.billgenerator.ApplicationController">
    <children>
       <ImageView fitHeight="96.0" fitWidth="143.0" layoutX="458.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="30.0" layoutY="104.0" prefHeight="18.0" prefWidth="127.0" text="Enter Product ID:" />
@@ -49,12 +49,12 @@
             <Slider orientation="VERTICAL" BorderPane.alignment="CENTER" />
          </right>
          <center>
-            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <TableView id="tableView" fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="75.0" text="ITEM" />
-                <TableColumn prefWidth="75.0" text="QTY" />
-                  <TableColumn prefWidth="75.0" text="PRICE" />
-                  <TableColumn prefWidth="75.0" text="AMOUNT" />
+                <TableColumn id="item" fx:id="itemStringTableColumn" prefWidth="75.0" text="ITEM" />
+                <TableColumn id="quantity" fx:id="quantityStringTableColumn" prefWidth="75.0" text="QTY" />
+                  <TableColumn id="price" fx:id="priceTableColumn" prefWidth="75.0" text="PRICE" />
+                  <TableColumn id="amount" fx:id="amountTableColumn" prefWidth="75.0" text="AMOUNT" />
               </columns>
             </TableView>
          </center>
