@@ -3,8 +3,10 @@ package com.project.billgenerator;
 import java.sql.*;
 
 public class module {
-    public static void getAndSet(int productId , int quantity)
+    private static Items items;
+    public static Items getAndSet(int productId , int quantity)
     {
+        Items items;
         String query = "Select item , price from items where id= ?";
         try
         {
@@ -17,11 +19,29 @@ public class module {
             String itemName = rs.getString(1);
             int price = rs.getInt(2);
             con.close();
-            Items items = new Items(itemName,price,quantity);
+            items = new Items(itemName,price,quantity);
+            return items;
         }
         catch (Exception e)
         {
             System.out.println(e);
+            return null;
         }
+    }
+    public static String getItemName()
+    {
+        return items.getName();
+    }
+    public static int getItemPrice()
+    {
+        return items.getPrice();
+    }
+    public static int getItemsQuantity()
+    {
+        return items.getQuantity();
+    }
+    public static int getItemsAmount()
+    {
+        return items.getAmount();
     }
 }
