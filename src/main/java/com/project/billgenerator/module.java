@@ -1,6 +1,9 @@
 package com.project.billgenerator;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class module {
     private static Items items;
@@ -20,6 +23,7 @@ public class module {
             int price = rs.getInt(2);
             con.close();
             items = new Items(itemName,price,quantity);
+            new Items(items);
             return items;
         }
         catch (Exception e)
@@ -28,10 +32,17 @@ public class module {
             return null;
         }
     }
-    public static String getItemName()
+    public Items getItem()
     {
-        return items.getName();
+        Items item = null;
+        return item;
     }
+//    public static String getItemName()
+//    {
+//        String name = items.getName();
+//
+//        return null;
+//    }
     public static int getItemPrice()
     {
         return items.getPrice();
